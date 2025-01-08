@@ -13,16 +13,34 @@ public class EnemyMovement : MonoBehaviour
 
     bool isDetected;
 
+    //Esta parte solo es para probar el drop. Esto se debe hacer en el script de la vida
+    //----------------------------------------------------------------------
+    int dropNum;
+    RandomDrop dropScript;
+    //----------------------------------------------------------------------
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
+        //----------------------------------------------------------------------
+        dropNum = 1;
+        print(dropNum);
+        dropScript = GetComponent<RandomDrop>();
+        //----------------------------------------------------------------------
+
     }
 
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, target.position);
-        //print(distanceToPlayer);
+        //----------------------------------------------------------------------
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            EnemyDeath();
+        }
+        //----------------------------------------------------------------------
 
+        float distanceToPlayer = Vector3.Distance(transform.position, target.position);
         if(distanceToPlayer <= rangeMax)
         {
             isDetected = true;
@@ -48,4 +66,17 @@ public class EnemyMovement : MonoBehaviour
         Gizmos.color = Color.black;
         Gizmos.DrawWireSphere(transform.position, rangeMin);
     }
+
+    //Esta parte solo es para probar el drop. Esto se debe hacer en el script de la vida
+    //----------------------------------------------------------------------
+    void EnemyDeath()
+    {
+        if(dropNum == 1)
+        {
+            dropScript.GenerateDrop();
+        } else {
+            print("No tiene drop");
+        }
+    }
+    //----------------------------------------------------------------------
 }
