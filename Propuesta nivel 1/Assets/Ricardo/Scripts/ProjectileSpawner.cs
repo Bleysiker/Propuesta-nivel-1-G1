@@ -11,6 +11,7 @@ public class ProjectileSpawner : MonoBehaviour
     // Intervalo de tiempo entre cada disparo.
     public float spawnInterval = 2f;
 
+
     // Control interno del tiempo.
     private float timer;
 
