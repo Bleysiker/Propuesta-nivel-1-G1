@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     //[SerializeField]private float speed;
     [SerializeField]float rangeMax;
     [SerializeField]float rangeMin;
+
     public Transform target;
 
     bool isDetected;
