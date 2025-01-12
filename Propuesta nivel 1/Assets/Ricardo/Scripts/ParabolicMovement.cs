@@ -12,6 +12,8 @@ public class ParabolicMovement : MonoBehaviour
     private Vector3 endPoint;        // Posición final del proyectil.
     private float progress;          // Progreso del movimiento (de 0 a 1).
 
+    public GameObject projectileMark;
+    private GameObject actualMark;
     private void Awake()
     {
         target = GameObject.Find("Target").GetComponent<Transform>();
@@ -25,6 +27,7 @@ public class ParabolicMovement : MonoBehaviour
         // Calcula la posición final del proyectil (objetivo con offset en Y).
         if (target != null) {
             endPoint = new Vector3(target.position.x, target.position.y, target.position.z);
+            actualMark = Instantiate(projectileMark, endPoint, projectileMark.transform.rotation);
         } else {
             Debug.LogWarning("No se ha asignado un objetivo para el proyectil.");
         }
@@ -66,6 +69,7 @@ public class ParabolicMovement : MonoBehaviour
     private void OnProjectileHit()
     {
         Debug.Log("El proyectil ha alcanzado su objetivo.");
+        Destroy(actualMark);
         Destroy(gameObject); // Destruye el proyectil (puedes agregar efectos aquí si es necesario).
     }
 

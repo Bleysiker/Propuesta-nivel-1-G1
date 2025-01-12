@@ -113,3 +113,5 @@ MonoBehaviour:
   target: {fileID: 0}
   maxHeight: 10
   speed: 1
+  projectileMark: {fileID: 288268038480317939, guid: e91c6921d7478874482b23602c9b36b7,
+    type: 3}
