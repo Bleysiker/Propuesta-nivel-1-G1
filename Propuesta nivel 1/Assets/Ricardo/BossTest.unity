@@ -971,6 +971,7 @@ MonoBehaviour:
   switchTime: 10
   moveDistance: 1
   moveSpeed: 2
+  finalState: 0
 --- !u!4 &1774076727
 Transform:
   m_ObjectHideFlags: 0
