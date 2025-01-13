@@ -11,19 +11,22 @@ public class ProjectileSpawner : MonoBehaviour
     // Intervalo de tiempo entre cada disparo.
     public float spawnInterval = 2f;
 
-
     // Control interno del tiempo.
     private float timer;
 
+    public bool active;
+
     void Update()
     {
-        // Actualiza el temporizador.
-        timer += Time.deltaTime;
+        if (active) {
+            // Actualiza el temporizador.
+            timer += Time.deltaTime;
 
-        // Si el temporizador supera el intervalo, instancia un proyectil.
-        if (timer >= spawnInterval) {
-            SpawnProjectile();
-            timer = 0; // Reinicia el temporizador.
+            // Si el temporizador supera el intervalo, instancia un proyectil.
+            if (timer >= spawnInterval) {
+                SpawnProjectile();
+                timer = 0; // Reinicia el temporizador.
+            }
         }
     }
 
