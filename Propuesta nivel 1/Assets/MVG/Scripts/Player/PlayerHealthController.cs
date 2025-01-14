@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int health;
+    
+    public void ReduceHealth(int amount)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        health -= amount;
+        if (health <= 0) {
+            Debug.Log("Dead");
+        }
         
     }
 }

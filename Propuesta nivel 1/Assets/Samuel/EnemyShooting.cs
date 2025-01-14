@@ -27,13 +27,13 @@ public class EnemyShooting : MonoBehaviour
         if(distanceToPlayer <= shootRange && !isShooting)
         {
             anim.SetTrigger("shoot");
+            isShooting = true;
         } 
     }
     IEnumerator Shooting()
     {
-        isShooting = true;
         Instantiate(bullet, pivot.position, pivot.rotation);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
         isShooting = false;
     }
 

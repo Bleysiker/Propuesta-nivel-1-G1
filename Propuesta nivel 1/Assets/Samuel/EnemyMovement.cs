@@ -29,6 +29,8 @@ public class EnemyMovement : MonoBehaviour
         {
             print("No encuentro el animator mi hermano");
         }
+        agent.updateRotation = false;
+
         
 
         //----------------------------------------------------------------------
@@ -54,6 +56,10 @@ public class EnemyMovement : MonoBehaviour
             isDetected = true;
             anim.SetLayerWeight(1, 1f);
             anim.SetBool("isWalking", true);
+
+            Vector3 directionToPlayer = target.position - transform.position;
+            directionToPlayer.y = 0;
+            transform.rotation = Quaternion.LookRotation(directionToPlayer);
         }
 
         if(isDetected && distanceToPlayer > rangeMin)

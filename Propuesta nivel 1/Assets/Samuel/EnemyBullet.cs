@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     [SerializeField]float bulletSpeed;
+    [SerializeField]int dmg;
 
     void Start()
     {
@@ -20,10 +21,12 @@ public class EnemyBullet : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
-            //Quitar vida
-            print("Le diste we");
+            col.GetComponent<PlayerHealthController>().ReduceHealth(dmg);
             Destroy(this.gameObject);
-        } else {
+        } if(col.gameObject.tag == "Enemy")
+        {
+            print("te diste soloxd");
+        }else {
             Destroy(this.gameObject);
         }
     }
