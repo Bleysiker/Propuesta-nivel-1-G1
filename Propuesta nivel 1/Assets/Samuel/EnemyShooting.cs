@@ -7,24 +7,33 @@ public class EnemyShooting : MonoBehaviour
     public GameObject bullet;
     public Transform pivot;
     public Transform target;
+    public Animator anim;
 
     [SerializeField]float shootRange;
 
     private bool isShooting = false;
+    void Awake()
+    {
+        if(anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
+        
+    }
 
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, target.position);
         if(distanceToPlayer <= shootRange && !isShooting)
         {
-            StartCoroutine(Shooting());
+            anim.SetTrigger("shoot");
+            isShooting = true;
         } 
     }
     IEnumerator Shooting()
     {
-        isShooting = true;
         Instantiate(bullet, pivot.position, pivot.rotation);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
         isShooting = false;
     }
 
@@ -32,6 +41,11 @@ public class EnemyShooting : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, shootRange);
+    }
+
+    void ShootAnim()
+    {
+        StartCoroutine(Shooting());
     }
 
         

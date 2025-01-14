@@ -5,17 +5,20 @@ using UnityEngine;
 public class Proyectil : MonoBehaviour
 {
     public float vidaBala = 3; 
+    public int dmg = 30; 
 
     private void Awake()
     {
         Destroy(gameObject, vidaBala);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider col)
     {
-        // Restar vida a enemigos
-
-        //Destroy(collision.gameObject);
-        //Destroy(gameObject);
+        if(col.gameObject.tag == "Enemy")
+        {
+            col.GetComponent<EnemyHealth>().ReduceHealth(dmg);
+            Destroy(this.gameObject);
+        }
+        
     }
 }
