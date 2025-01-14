@@ -10,6 +10,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]float rangeMax;
     [SerializeField]float rangeMin;
 
+    public Animator anim;
+
     public Transform target;
 
     bool isDetected;
@@ -23,6 +25,11 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        if(anim == null)
+        {
+            print("No encuentro el animator mi hermano");
+        }
+        
 
         //----------------------------------------------------------------------
         dropNum = 1;
@@ -45,16 +52,20 @@ public class EnemyMovement : MonoBehaviour
         if(distanceToPlayer <= rangeMax)
         {
             isDetected = true;
+            anim.SetLayerWeight(1, 1f);
+            anim.SetBool("isWalking", true);
         }
 
         if(isDetected && distanceToPlayer > rangeMin)
         {
+            anim.SetBool("isWalking", true);
             agent.isStopped = false;
             agent.SetDestination(target.position);
 
         } else {
 
             agent.isStopped = true;
+            anim.SetBool("isWalking", false);
             
         }
     }
