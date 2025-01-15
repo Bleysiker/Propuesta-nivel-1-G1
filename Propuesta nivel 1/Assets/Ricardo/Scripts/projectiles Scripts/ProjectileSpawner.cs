@@ -13,7 +13,8 @@ public class ProjectileSpawner : MonoBehaviour
 
     // Control interno del tiempo.
     private float timer;
-
+    [SerializeField] float delay;
+    private bool initialDelay;
     public bool active;
 
     void Update()
@@ -21,11 +22,17 @@ public class ProjectileSpawner : MonoBehaviour
         if (active) {
             // Actualiza el temporizador.
             timer += Time.deltaTime;
-
-            // Si el temporizador supera el intervalo, instancia un proyectil.
-            if (timer >= spawnInterval) {
-                SpawnProjectile();
-                timer = 0; // Reinicia el temporizador.
+            if(!initialDelay) {
+                if (timer >= delay) {
+                    initialDelay = true;
+                    timer = 0;
+                }
+            } else {
+                // Si el temporizador supera el intervalo, instancia un proyectil.
+                if (timer >= spawnInterval) {
+                    SpawnProjectile();
+                    timer = 0; // Reinicia el temporizador.
+                }
             }
         }
     }
@@ -37,5 +44,10 @@ public class ProjectileSpawner : MonoBehaviour
             // Instancia el proyectil en la posición y rotación del punto de spawn.
             Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
         }
+    }
+    private void OnDisable()
+    {
+        initialDelay = false;
+        timer = 0;
     }
 }

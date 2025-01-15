@@ -16,6 +16,9 @@ public class BossFightController : MonoBehaviour
 
     public Slider healthBar;
     public bool alreadyFigthing=false;
+
+    [SerializeField] ToggleAnimations bossH1Anim, bossH2Anim;
+
     void Start()
     {
         healthBar.maxValue = bossHealth.health;
@@ -62,6 +65,7 @@ public class BossFightController : MonoBehaviour
 
     public void BeginFight()
     {
+        
         alreadyFigthing = true;
         SwitchAttack(true);
         // Inicia la corrutina para mover el objeto hacia la posición objetivo.
@@ -72,6 +76,8 @@ public class BossFightController : MonoBehaviour
 
     public void EndFight()
     {
+        bossH1Anim.ChangeAnimationState("Dead");
+        bossH2Anim.ChangeAnimationState("Dead");
         SwitchAttack(false);
         // Inicia la corrutina para regresar el objeto a su posición inicial.
         if (boss != null) {
