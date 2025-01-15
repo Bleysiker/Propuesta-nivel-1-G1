@@ -17,6 +17,9 @@ public class ProjectileSpawner : MonoBehaviour
     private bool initialDelay;
     public bool active;
 
+    public SoundStorage storage;
+    public int soundAppear,soundHAtk,soundPS;
+
     void Update()
     {
         if (active) {
@@ -39,6 +42,9 @@ public class ProjectileSpawner : MonoBehaviour
 
     void SpawnProjectile()
     {
+        //EFECTO DE DISPARO*************
+        storage.audio[soundHAtk].Play();
+        storage.audio[soundPS].Play();
         // Verifica que el prefab y el punto de spawn estén asignados.
         if (projectilePrefab != null && spawnPoint != null) {
             // Instancia el proyectil en la posición y rotación del punto de spawn.
@@ -49,5 +55,10 @@ public class ProjectileSpawner : MonoBehaviour
     {
         initialDelay = false;
         timer = 0;
+    }
+    private void OnEnable()
+    {
+        storage.audio[soundAppear].Play();
+        //EFECTO DE SPLASHHH************
     }
 }

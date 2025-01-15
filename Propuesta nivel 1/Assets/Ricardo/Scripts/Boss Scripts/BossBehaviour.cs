@@ -19,8 +19,12 @@ public class BossBehaviour : MonoBehaviour
 
     [SerializeField] ToggleAnimations bossH1Anim, bossH2Anim;
 
+
+   
+
     void Start()
     {
+        //Animaciones
         bossH1Anim.ChangeAnimationState("Appear");
         bossH2Anim.ChangeAnimationState("Appear");
         // Guarda la posición inicial del padre.
