@@ -9,7 +9,11 @@ public class EnemyShooting : MonoBehaviour
     public Transform target;
     public Animator anim;
 
+    public EnemyAudioManager audioManager;
+
     [SerializeField]float shootRange;
+
+    [SerializeField]EnemyHealth enemyHealth;
 
     private bool isShooting = false;
     void Awake()
@@ -23,13 +27,18 @@ public class EnemyShooting : MonoBehaviour
 
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, target.position);
-        if(distanceToPlayer <= shootRange && !isShooting)
+        if(enemyHealth.isDead==false)
         {
-            anim.SetTrigger("shoot");
-            isShooting = true;
-        } 
+            float distanceToPlayer = Vector3.Distance(transform.position, target.position);
+            if(distanceToPlayer <= shootRange && !isShooting)
+            {
+                anim.SetTrigger("shoot");
+                isShooting = true;
+            }
+        }
+         
     }
+    
     IEnumerator Shooting()
     {
         Instantiate(bullet, pivot.position, pivot.rotation);
@@ -46,6 +55,11 @@ public class EnemyShooting : MonoBehaviour
     void ShootAnim()
     {
         StartCoroutine(Shooting());
+    }
+
+    public void ShootSound()
+    {
+        audioManager.PlayAttack();
     }
 
         
