@@ -1,0 +1,12 @@
+Diffuse=Boss_Hudra_Leaf_D
+Opacity=Boss_Hudra_Leaf_A
+Other[0]=Boss_Hudra_Body_BB
+Other[1]=default_black
+Other[2]=default_white
+Other[3]=Good64x64TilingNoiseHighFreq
+Other[4]=HairClump02_Alpha
+Other[5]=HairClump02_Depth
+Other[6]=HairClump02_DyeMask
+Other[7]=HairClump02_ID
+Other[8]=HairClump02_Roots
+Other[9]=T_Hair_Flow

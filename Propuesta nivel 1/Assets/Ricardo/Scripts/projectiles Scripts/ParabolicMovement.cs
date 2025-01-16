@@ -14,6 +14,9 @@ public class ParabolicMovement : MonoBehaviour
 
     public GameObject projectileMark;
     private GameObject actualMark;
+
+    public AudioSource bullet;
+    public float soundDelay;
     private void Awake()
     {
         target = GameObject.Find("Target").GetComponent<Transform>();
@@ -69,8 +72,22 @@ public class ParabolicMovement : MonoBehaviour
     private void OnProjectileHit()
     {
         Debug.Log("El proyectil ha alcanzado su objetivo.");
-        Destroy(actualMark);
-        Destroy(gameObject); // Destruye el proyectil (puedes agregar efectos aquí si es necesario).
+        bullet.Play();
+        StartCoroutine(DelayDestroy()); // Destruye el proyectil (puedes agregar efectos aquí si es necesario).
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player")) {
+            bullet.Play();
+            //hace daño al jugador
+            //EFECTO DE DESTRUCCION**************************************
+            StartCoroutine(DelayDestroy());// Destruye el proyectil (puedes agregar efectos aquí si es necesario).
+        }
+    }
+    IEnumerator DelayDestroy()
+    {
+        yield return new WaitForSeconds(soundDelay);
+        Destroy(actualMark);
+        Destroy(gameObject);
+    }
 }

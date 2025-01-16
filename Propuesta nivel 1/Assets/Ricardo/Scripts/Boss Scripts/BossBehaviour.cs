@@ -16,8 +16,17 @@ public class BossBehaviour : MonoBehaviour
     private bool isSwitching = false;       // Para evitar múltiples intercambios simultáneos.
     private bool hasFinalStateExecuted = false; // Para asegurarse de que el estado final solo se ejecute una vez.
 
+
+    [SerializeField] ToggleAnimations bossH1Anim, bossH2Anim;
+
+
+   
+
     void Start()
     {
+        //Animaciones
+        bossH1Anim.ChangeAnimationState("Appear");
+        bossH2Anim.ChangeAnimationState("Appear");
         // Guarda la posición inicial del padre.
         initialPosition = transform.position;
 
@@ -35,6 +44,8 @@ public class BossBehaviour : MonoBehaviour
 
     void Update()
     {
+        
+        
         // Ejecuta el comportamiento final solo una vez cuando `finalState` se activa.
         if (finalState && !hasFinalStateExecuted) {
             hasFinalStateExecuted = true; // Marca que el estado final ya se ejecutó.
@@ -54,6 +65,7 @@ public class BossBehaviour : MonoBehaviour
 
     IEnumerator SwitchWithMovement()
     {
+        
         isSwitching = true;
 
         // Mueve el objeto padre hacia abajo.
@@ -74,7 +86,6 @@ public class BossBehaviour : MonoBehaviour
     IEnumerator FinalStateBehavior()
     {
         isSwitching = true;
-
         // Mueve el objeto padre hacia abajo por última vez.
         Vector3 targetPosition = initialPosition - new Vector3(0, moveDistance, 0);
         yield return MoveToPosition(targetPosition);
