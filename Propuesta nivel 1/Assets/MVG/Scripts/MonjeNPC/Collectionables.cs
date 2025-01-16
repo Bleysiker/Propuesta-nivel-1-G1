@@ -11,7 +11,7 @@ public class Collectionables : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerController player = other.GetComponent<PlayerController>();
+            PlayerHealthController player = other.GetComponent<PlayerHealthController>();
 
             if (player != null)
             {
