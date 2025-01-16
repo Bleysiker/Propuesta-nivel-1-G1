@@ -521,7 +521,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 03781cc103206dc4b910495897b6e62d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 227938dca75086b41b41fc6cdafcd601, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -869,6 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  isShieldActive: 0
 --- !u!1 &516293654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,7 +2405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1774076726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2455,8 +2456,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  isDead: 0
   boss: 1
   takingDamage: {fileID: 11400000, guid: 1bc3d05a04a855e4580998eda0f9bcb2, type: 2}
+  audioManager: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &1795094338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7036213049465896255, guid: 05d620d05a8ace243acdadd6a4f2f347,
@@ -2473,7 +2477,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 03781cc103206dc4b910495897b6e62d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 227938dca75086b41b41fc6cdafcd601, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
