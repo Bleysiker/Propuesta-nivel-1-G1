@@ -5,14 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    public Image healthBar;
     public int health;
     public bool isShieldActive = false;
-
-    private void Update()
-    {
-        healthBar.fillAmount = health / 100;
-    }
 
     public void IncreaseHealth(int amount)
     {
@@ -26,14 +20,11 @@ public class PlayerHealthController : MonoBehaviour
             Debug.Log("Health increased: " + health);
         }
 
-        //health = Mathf.Clamp(health, 0, 100);
-        //healthBar.fillAmount = health / 100;
     }
 
     public void ReduceHealth(int amount)
     {
         health -= amount;
-        //healthBar.fillAmount = health / 100;
         if (health <= 0) {
             Debug.Log("Player Dead");
         }
