@@ -5,10 +5,15 @@ using UnityEngine;
 public class RandomDrop : MonoBehaviour
 {
     public GameObject[] drops;
+    int randomNum;
+
+    void Start()
+    {
+        randomNum = Random.Range(0,drops.Length);
+    }
 
     public void GenerateDrop()
     {
-        int randomNum = Random.Range(0,drops.Length);
         float randomX = GenerateRandomNumber();
         float randomZ = GenerateRandomNumber();
         Vector3 newPos = new Vector3(randomX, 0, randomZ);
