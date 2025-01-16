@@ -17,6 +17,9 @@ public class ParabolicMovement : MonoBehaviour
 
     public AudioSource bullet;
     public float soundDelay;
+
+    public int damage;
+
     private void Awake()
     {
         target = GameObject.Find("Target").GetComponent<Transform>();
@@ -80,6 +83,7 @@ public class ParabolicMovement : MonoBehaviour
         if (other.CompareTag("Player")) {
             bullet.Play();
             //hace daño al jugador
+            other.GetComponent<PlayerHealthController>().ReduceHealth(damage);
             //EFECTO DE DESTRUCCION**************************************
             StartCoroutine(DelayDestroy());// Destruye el proyectil (puedes agregar efectos aquí si es necesario).
         }
