@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyAudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource footstepsSource;
+    [SerializeField] private AudioSource hitSource;
     [SerializeField] private AudioSource attackSource;
     [SerializeField] private AudioSource dyingSource;
 
@@ -19,9 +19,9 @@ public class EnemyAudioManager : MonoBehaviour
         }
     }
 
-    public void PlayFootstep()
+    public void PlayHit()
     {
-        footstepsSource.Play();
+        hitSource.Play();
     }
 
     public void PlayAttack()

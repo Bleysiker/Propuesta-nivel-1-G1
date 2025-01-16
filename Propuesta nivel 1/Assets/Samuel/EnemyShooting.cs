@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
+    [Header("Disparo enemigo")]
+    [SerializeField]float shootRange;
     public GameObject bullet;
     public Transform pivot;
     public Transform target;
-    public Animator anim;
+    private bool isShooting = false;
 
+    [Header("Animator")]
+    [SerializeField] Animator anim;
+
+    [Header("AudioManager del enemigo")]
     public EnemyAudioManager audioManager;
 
-    [SerializeField]float shootRange;
-
+    [Header("Vida del enemigo (EnemyHealth)")]
     [SerializeField]EnemyHealth enemyHealth;
 
-    private bool isShooting = false;
+    
     void Awake()
     {
         if(anim == null)
@@ -38,7 +43,7 @@ public class EnemyShooting : MonoBehaviour
         }
          
     }
-    
+
     IEnumerator Shooting()
     {
         Instantiate(bullet, pivot.position, pivot.rotation);

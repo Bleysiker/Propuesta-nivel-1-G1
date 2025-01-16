@@ -5,27 +5,23 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
+    
     NavMeshAgent agent;
-    //[SerializeField]private float speed;
+    [Header("Movimiento del enemigo")]
     [SerializeField]float rangeMax;
     [SerializeField]float rangeMin;
-
-    public Animator anim;
-
+    bool isDetected;
     public Transform target;
 
-    bool isDetected;
-
+    [Header("Animator")]
+    [SerializeField] Animator anim;
+    
+    [Header("Vida del enemigo (EnemyHealth)")]
     [SerializeField]EnemyHealth enemyHealth;
-
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        if(anim == null)
-        {
-            print("No encuentro el animator mi hermano");
-        }
         agent.updateRotation = false;
     }
 
