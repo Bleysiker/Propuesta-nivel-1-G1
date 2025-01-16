@@ -19,6 +19,9 @@ public class Proyectil : MonoBehaviour
             col.GetComponent<EnemyHealth>().ReduceHealth(dmg);
             Destroy(this.gameObject);
         }
-        
+        if (col.gameObject.tag == "Boss") {
+            col.GetComponent<ShareHealth>().RedirectDamage(dmg);
+            Destroy(this.gameObject);
+        }
     }
 }

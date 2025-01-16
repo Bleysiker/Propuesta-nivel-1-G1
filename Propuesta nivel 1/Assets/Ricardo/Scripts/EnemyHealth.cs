@@ -37,20 +37,21 @@ public class EnemyHealth : MonoBehaviour
             if (health < 0) {
                 health = 0;
                 isDead = true;
+                if (!boss) {
+                    //Quitando la máscara del apuntado
+                    anim.SetLayerWeight(1, 0f);
+                    anim.SetBool("isDead", true);
 
-                //Quitando la máscara del apuntado
-                anim.SetLayerWeight(1, 0f);
-                anim.SetBool("isDead", true);
+                    //Desactvando el collider
+                    CapsuleCollider collider = this.gameObject.GetComponent<CapsuleCollider>();
+                    collider.enabled = false;
 
-                //Desactvando el collider
-                CapsuleCollider collider = this.gameObject.GetComponent<CapsuleCollider>();
-                collider.enabled = false;
-
-                audioManager.PlayDying();
+                    audioManager.PlayDying();
+                }
                 EnemyDeath();
                 Destroy(gameObject, 10f);
             }else {
-                audioManager.PlayHit();
+                if(!boss) audioManager.PlayHit();
             }
         }
             
@@ -58,6 +59,9 @@ public class EnemyHealth : MonoBehaviour
 
     void EnemyDeath()
     {
+        if (boss) {
+            dropNum = 0;
+        }
         if(dropNum == 1)
         {
             dropScript.GenerateDrop();
