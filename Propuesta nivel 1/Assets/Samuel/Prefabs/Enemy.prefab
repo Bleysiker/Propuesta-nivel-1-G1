@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8963775702753210223
+--- !u!1 &4207116263292541414
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8963775702753210222}
+  - component: {fileID: 5500186868229948627}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -16,20 +16,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8963775702753210222
+--- !u!4 &5500186868229948627
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8963775702753210223}
+  m_GameObject: {fileID: 4207116263292541414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.176, y: 1.65, z: 1.048}
+  m_LocalPosition: {x: 0.102, y: 0.513, z: 1.105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3329808856841365806}
-  m_RootOrder: 0
+  m_Father: {fileID: 8963775702904005875}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8963775702904005881
 GameObject:
@@ -67,6 +67,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8930360981371195383}
+  - {fileID: 5500186868229948627}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -185,8 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - {fileID: 6959226071049061740, guid: fcdec9d7f6f6c134c9f4326ec14411be, type: 3}
-  - {fileID: 6959226071049061740, guid: fcdec9d7f6f6c134c9f4326ec14411be, type: 3}
+  - {fileID: 6718516128327619396, guid: 61b6ecfc03ffa4f51ae190310dedde9c, type: 3}
+  - {fileID: 5312846312687353795, guid: 7f145dfb5f29e42ff9b6ae55aa94bc9c, type: 3}
 --- !u!114 &1850819850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,12 +338,6 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 8963775701465360412}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3329808856841365806 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3292024669512384206, guid: 763ff3a9d5e9a42489e00abf975201e5,
-    type: 3}
-  m_PrefabInstance: {fileID: 8963775701465360412}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8116844785086747981 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 763ff3a9d5e9a42489e00abf975201e5,
@@ -362,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 6842767953878711079, guid: 72dad120a0a572d418788db7d3d6092f, type: 3}
-  pivot: {fileID: 8963775702753210222}
+  pivot: {fileID: 0}
   target: {fileID: 0}
   anim: {fileID: 3246865721843406221}
   shootRange: 20

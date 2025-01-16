@@ -10,7 +10,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         health -= amount;
         if (health <= 0) {
-            Debug.Log("Dead");
+            Debug.Log("Player Dead");
         }
         
     }
