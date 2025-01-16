@@ -5,60 +5,56 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
+    
     NavMeshAgent agent;
-    //[SerializeField]private float speed;
+    [Header("Movimiento del enemigo")]
     [SerializeField]float rangeMax;
     [SerializeField]float rangeMin;
-
-    public Animator anim;
-
+    bool isDetected;
     public Transform target;
 
-    bool isDetected;
-
+    [Header("Animator")]
+    [SerializeField] Animator anim;
+    
+    [Header("Vida del enemigo (EnemyHealth)")]
+    [SerializeField]EnemyHealth enemyHealth;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        if(anim == null)
-        {
-            print("No encuentro el animator mi hermano");
-        }
         agent.updateRotation = false;
-
-        
-
-        
-
     }
 
     void Update()
     {
-
-        float distanceToPlayer = Vector3.Distance(transform.position, target.position);
-        if(distanceToPlayer <= rangeMax)
+        if(enemyHealth.isDead == false)
         {
-            isDetected = true;
-            anim.SetLayerWeight(1, 1f);
-            anim.SetBool("isWalking", true);
+            float distanceToPlayer = Vector3.Distance(transform.position, target.position);
+            if(distanceToPlayer <= rangeMax)
+            {
+                isDetected = true;
+                anim.SetLayerWeight(1, 1f);
+                anim.SetBool("isWalking", true);
 
-            Vector3 directionToPlayer = target.position - transform.position;
-            directionToPlayer.y = 0;
-            transform.rotation = Quaternion.LookRotation(directionToPlayer);
+                Vector3 directionToPlayer = target.position - transform.position;
+                directionToPlayer.y = 0;
+                transform.rotation = Quaternion.LookRotation(directionToPlayer);
+            }
+
+            if(isDetected && distanceToPlayer > rangeMin)
+            {
+                anim.SetBool("isWalking", true);
+                agent.isStopped = false;
+                agent.SetDestination(target.position);
+
+            } else {
+
+                agent.isStopped = true;
+                anim.SetBool("isWalking", false);
+                
         }
-
-        if(isDetected && distanceToPlayer > rangeMin)
-        {
-            anim.SetBool("isWalking", true);
-            agent.isStopped = false;
-            agent.SetDestination(target.position);
-
-        } else {
-
-            agent.isStopped = true;
-            anim.SetBool("isWalking", false);
-            
         }
+        
     }
 
     void OnDrawGizmos()

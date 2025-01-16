@@ -29,7 +29,7 @@ public class IsometricCameraFollow : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Opcional: Haz que la cámara persista entre escenas
+       // DontDestroyOnLoad(gameObject); // Opcional: Haz que la cámara persista entre escenas
     }
 
     private void LateUpdate()

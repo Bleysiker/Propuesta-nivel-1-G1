@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [Header("Vida enemigo")]
     public int health;
+    public bool isDead = false;
+
+    [Header("Boss")]
     public bool boss;
     public CustomEvents takingDamage;
 
     int dropNum;
     RandomDrop dropScript;
+
+    [Header("AudioManager del enemigo")]
+    public EnemyAudioManager audioManager;
+
+    [Header("Animator")]
+    [SerializeField]Animator anim;
     
     void Start()
     {
@@ -19,14 +29,31 @@ public class EnemyHealth : MonoBehaviour
 
     public void ReduceHealth(int amount)
     {
-        health -= amount;
-        if (boss) takingDamage.FireEvent();
+        if(!isDead)
+        {
+            health -= amount;
+            if (boss) takingDamage.FireEvent();
 
-        if (health < 0) {
-            health = 0;
-            Debug.Log("Enemy Dead");
-            EnemyDeath();
+            if (health < 0) {
+                health = 0;
+                isDead = true;
+
+                //Quitando la máscara del apuntado
+                anim.SetLayerWeight(1, 0f);
+                anim.SetBool("isDead", true);
+
+                //Desactvando el collider
+                CapsuleCollider collider = this.gameObject.GetComponent<CapsuleCollider>();
+                collider.enabled = false;
+
+                audioManager.PlayDying();
+                EnemyDeath();
+                Destroy(gameObject, 10f);
+            }else {
+                audioManager.PlayHit();
+            }
         }
+            
     }
 
     void EnemyDeath()
