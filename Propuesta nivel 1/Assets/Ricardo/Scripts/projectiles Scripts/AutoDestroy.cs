@@ -5,7 +5,7 @@ public class AutoDestroy : MonoBehaviour
 {
     public float lifetime = 5f; // Tiempo en segundos antes de destruir el objeto.
     public float soundDelay;
-    public AudioSource sound;
+    //public AudioSource sound;
     void Start()
     {
         // Inicia la cuenta atrás para destruir el objeto.
@@ -14,7 +14,7 @@ public class AutoDestroy : MonoBehaviour
 
     void DestroyObject()
     {
-        sound.Play();
+        //sound.Play();
         StartCoroutine(DestroyBullet());
     }
     
