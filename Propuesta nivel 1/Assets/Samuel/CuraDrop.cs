@@ -8,6 +8,8 @@ public class CuraDrop : MonoBehaviour
     float timer = 0;
     float cooldown = 5f;
 
+    [SerializeField] Animator anim;
+
     public void GenerateDrop()
     {
         int randomNum = Random.Range(0,drops.Length);
@@ -29,7 +31,8 @@ public class CuraDrop : MonoBehaviour
         if(timer >= cooldown)
         {
             timer = 0;
-            GenerateDrop();
+            anim.SetTrigger("Drop");
+            //GenerateDrop();
         }
     }
 

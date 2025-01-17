@@ -1,0 +1,317 @@
+fileFormatVersion: 2
+guid: 1318ace2fb0b77d4b994a8143b11a423
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: backpack_mat
+    second: {fileID: 2100000, guid: 551abb9f7386f2240aeb53bcd6f31c69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: belt_mat1
+    second: {fileID: 2100000, guid: 3a34f91500975c44aa920aa3f1398f7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: book_mat
+    second: {fileID: 2100000, guid: 8a87d59d2d0992c49b41445399578917, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boots_Mat
+    second: {fileID: 2100000, guid: ce1fcb947358d5d4f8c59f8cf7b935b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: candles_mat
+    second: {fileID: 2100000, guid: 067d1ed38ca163f4eb2fc4a9b7efbd35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyes_mat
+    second: {fileID: 2100000, guid: 437e70e8a4a078441a2d8e5c7664543d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hands_mat
+    second: {fileID: 2100000, guid: 0e1f82861b3f3a442a2204649f76aa74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hat_mat
+    second: {fileID: 2100000, guid: 1ec54d17875c13240acb473220310d96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: head_mat
+    second: {fileID: 2100000, guid: 9ab10724933fb5b44a8b06d908909ff5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lowerdrapes_mat
+    second: {fileID: 2100000, guid: f93eea27a60873d4c85a1e6569cae251, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pants_Mat
+    second: {fileID: 2100000, guid: c1e43f4d021ac0b46b6ce715e0ccb0fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paper_mat
+    second: {fileID: 2100000, guid: 451c1f43c629b0a429a48007e22f6500, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rosarius_mat1
+    second: {fileID: 2100000, guid: 7d3072f863d535149830cfdef7c4bf03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shoulders_mat
+    second: {fileID: 2100000, guid: e5f39e7e69eb5d844a22964413a846dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skull_mat
+    second: {fileID: 2100000, guid: ebeff4140715d004d86e382730a264ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: underrobres_mat
+    second: {fileID: 2100000, guid: 4532c476f59abdf448bc08550a29ec17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: upperdrapes_mat
+    second: {fileID: 2100000, guid: d30b802ec6c6c114395e100c489b4e0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: upperrobe_mat
+    second: {fileID: 2100000, guid: 04c3c67d85f0e3742943f0b083f813ae, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftLowerLeg' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Cardinal(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Xaphan_mesh_grp
+      parentName: Cardinal(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: shoulders
+      parentName: Xaphan_mesh_grp
+      position: {x: -0, y: 1.5083282, z: 0.0071023367}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: papers
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.16339397, y: 1.100525, z: -0.07812985}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Uppershirt
+      parentName: Xaphan_mesh_grp
+      position: {x: -0, y: 1.3798912, z: 0.0057546184}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: lowerSkirt
+      parentName: Xaphan_mesh_grp
+      position: {x: -0, y: 1.1474233, z: 0.17972949}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1.0405577, z: 1}
+    - name: rosarius
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.0035946749, y: 1.4607027, z: 0.14017175}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: belt
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.0026889134, y: 1.1403234, z: 0.01572532}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: Xaphan_mesh_grp
+      position: {x: -0.0002775526, y: 1.7013769, z: 0.030291434}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hands_left_mesh
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.000000038146972, y: 1.5023645, z: -0.018676626}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pants_mesh
+      parentName: Xaphan_mesh_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: boots_mesh
+      parentName: Xaphan_mesh_grp
+      position: {x: -0, y: 0.19653752, z: 0.051289525}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: hands_right_mesh
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.000000038146972, y: 1.5023645, z: -0.018676626}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: book
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.23013745, y: 1.069144, z: -0.0027928022}
+      rotation: {x: -0.04567162, y: -0.029711979, z: -0.6208812, w: 0.7820089}
+      scale: {x: 0.17634429, y: 0.05940831, z: 0.23574291}
+    - name: hat
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.0003701639, y: 1.8670094, z: 0.021437626}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tube
+      parentName: Xaphan_mesh_grp
+      position: {x: -0.13127719, y: 1.5960128, z: -0.008917751}
+      rotation: {x: -0.058478713, y: -0.12883563, z: -0.017205942, w: 0.9897907}
+      scale: {x: 1, y: 1, z: 1}
+    - name: eyes
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.0004492521, y: 1.7382394, z: 0.09958976}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: candles2
+      parentName: Xaphan_mesh_grp
+      position: {x: -0.002116804, y: 1.5569063, z: -0.16772434}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: backpack
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.0008513409, y: 1.4761751, z: -0.20253634}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: skull
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.00083752844, y: 1.4363346, z: -0.18909833}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: skull_metal
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.0019082667, y: 1.4708928, z: -0.17690066}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: UpperRobe
+      parentName: Xaphan_mesh_grp
+      position: {x: -0, y: 1.4042568, z: 0.030169453}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: lowerDrapes
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.003820591, y: 0.59858376, z: -0.24493122}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: upperDrapes
+      parentName: Xaphan_mesh_grp
+      position: {x: 0.0014300537, y: 0.87244236, z: 0.03940354}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
