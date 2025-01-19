@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeMax: 30
-  rangeMin: 10
+  rangeMin: 5
   target: {fileID: 0}
   anim: {fileID: 3246865721843406221}
   enemyHealth: {fileID: 1850819850}
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c2a88cd27b9a44aaf2f5d4e674fe3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootRange: 20
+  shootRange: 15
   bullet: {fileID: 6842767953878711079, guid: 72dad120a0a572d418788db7d3d6092f, type: 3}
   pivot: {fileID: 5500186868229948627}
   target: {fileID: 0}

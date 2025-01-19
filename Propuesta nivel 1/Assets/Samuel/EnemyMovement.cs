@@ -57,12 +57,12 @@ public class EnemyMovement : MonoBehaviour
         
     }
 
-    void OnDrawGizmos()
+   /*  void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, rangeMax);
 
         Gizmos.color = Color.black;
         Gizmos.DrawWireSphere(transform.position, rangeMin);
-    }
+    } */
 }
