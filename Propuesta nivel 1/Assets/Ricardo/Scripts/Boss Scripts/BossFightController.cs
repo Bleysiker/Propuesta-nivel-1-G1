@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class BossFightController : MonoBehaviour
 {
-    public GameObject boss;   // Referencia al objeto que se va a mover.
+    public GameObject boss,fullStage;   // Referencia al objeto que se va a mover.
    
 
     public float delayStart, delayEnd;
@@ -24,7 +24,7 @@ public class BossFightController : MonoBehaviour
 
     public GameObject deadEffect;
     public Transform[] headPosition;
-    public GameObject innactiveEffect;
+    //public GameObject[] innactiveEffect;
 
     void Start()
     {
@@ -77,7 +77,7 @@ public class BossFightController : MonoBehaviour
         SwitchAttack(true);
         // Inicia la corrutina para mover el objeto hacia la posición objetivo.
         if (boss != null) {
-            StartCoroutine(MoveObject(boss,delayStart,true));
+            StartCoroutine(MoveObject(fullStage,delayStart,true));
         }
     }
 
@@ -90,8 +90,9 @@ public class BossFightController : MonoBehaviour
         foreach(Transform pos in headPosition) {
             Instantiate(deadEffect, pos.position, pos.rotation);
         }
-
-        innactiveEffect.SetActive(false);
+        //foreach(GameObject effect in innactiveEffect) {
+        //    effect.SetActive(false);
+        //}
 
         storage.audio[2].Play();
         storage.audio[3].Play();
@@ -99,7 +100,7 @@ public class BossFightController : MonoBehaviour
         SwitchAttack(false);
         // Inicia la corrutina para regresar el objeto a su posición inicial.
         if (boss != null) {
-            StartCoroutine(MoveObject(boss,delayEnd,false));
+           StartCoroutine(MoveObject(boss,delayEnd,false));
         }
     }
 

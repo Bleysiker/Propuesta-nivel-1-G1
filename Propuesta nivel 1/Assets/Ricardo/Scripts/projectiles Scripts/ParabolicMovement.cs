@@ -25,9 +25,12 @@ public class ParabolicMovement : MonoBehaviour
 
     bool hitOnce;
 
+   
+
+
     private void Awake()
     {
-        target = GameObject.Find("Target").GetComponent<Transform>();
+        target = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     void Start()
