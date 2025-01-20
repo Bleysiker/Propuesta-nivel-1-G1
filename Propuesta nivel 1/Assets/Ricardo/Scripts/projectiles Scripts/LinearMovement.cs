@@ -1,11 +1,14 @@
 
 using UnityEngine;
-
+using System.Collections;
 public class LinearMovement : MonoBehaviour
 {
     public float speed = 10f; // Velocidad del proyectil.
 
     public AudioSource bullet;
+    public GameObject destroyEffect;
+    public float destroyTime;
+    GameObject actualGameObject;
 
     public int damage;
     void Update()
@@ -21,8 +24,16 @@ public class LinearMovement : MonoBehaviour
             bullet.Play();
             //hace daño al jugador
             other.GetComponent<PlayerHealthController>().ReduceHealth(damage);
-            //EFECTO DE DESTRUCCION*****************************
-            Destroy(gameObject);
+            actualGameObject=Instantiate(destroyEffect,transform.position,transform.rotation);
+            StartCoroutine(DestroyBullet());
         }
     }
+
+    IEnumerator DestroyBullet()
+    {
+        yield return new WaitForSeconds(destroyTime);
+        Destroy(actualGameObject);
+        Destroy(gameObject);
+    }
+    
 }
