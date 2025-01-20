@@ -16,9 +16,14 @@ public class ParabolicMovement : MonoBehaviour
     private GameObject actualMark;
 
     public AudioSource bullet;
-    public float soundDelay;
+    public float effectDelay=1;
 
     public int damage;
+
+    public GameObject destructionEffect;
+    GameObject actualEffect;
+
+    bool hitOnce;
 
     private void Awake()
     {
@@ -54,7 +59,7 @@ public class ParabolicMovement : MonoBehaviour
         transform.position = currentPos;
 
         // Si se alcanza el objetivo, destruye el proyectil.
-        if (progress >= 1f) {
+        if (progress >= 1f && !hitOnce) {
             OnProjectileHit();
         }
     }
@@ -74,23 +79,28 @@ public class ParabolicMovement : MonoBehaviour
     // Lógica cuando el proyectil llega al destino.
     private void OnProjectileHit()
     {
+        hitOnce = true;
         Debug.Log("El proyectil ha alcanzado su objetivo.");
         bullet.Play();
+        actualEffect = Instantiate(destructionEffect, actualMark.transform.position, actualMark.transform.rotation);
         StartCoroutine(DelayDestroy()); // Destruye el proyectil (puedes agregar efectos aquí si es necesario).
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) {
+            hitOnce = true;
             bullet.Play();
             //hace daño al jugador
             other.GetComponent<PlayerHealthController>().ReduceHealth(damage);
             //EFECTO DE DESTRUCCION**************************************
+            actualEffect = Instantiate(destructionEffect, actualMark.transform.position, actualMark.transform.rotation);
             StartCoroutine(DelayDestroy());// Destruye el proyectil (puedes agregar efectos aquí si es necesario).
         }
     }
     IEnumerator DelayDestroy()
     {
-        yield return new WaitForSeconds(soundDelay);
+        yield return new WaitForSeconds(effectDelay);
+        Destroy(actualEffect);
         Destroy(actualMark);
         Destroy(gameObject);
     }

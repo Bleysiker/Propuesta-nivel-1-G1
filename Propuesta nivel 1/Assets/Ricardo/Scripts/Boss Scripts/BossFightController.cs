@@ -22,6 +22,10 @@ public class BossFightController : MonoBehaviour
 
     [SerializeField] SoundStorage storage;
 
+    public GameObject deadEffect;
+    public Transform[] headPosition;
+    public GameObject innactiveEffect;
+
     void Start()
     {
         healthBar.maxValue = bossHealth.health;
@@ -82,6 +86,12 @@ public class BossFightController : MonoBehaviour
         //EFECTO DE MUERTE O EXPLOSION DE VICERAS*********************
         bossH1Anim.ChangeAnimationState("Dead");
         bossH2Anim.ChangeAnimationState("Dead");
+
+        foreach(Transform pos in headPosition) {
+            Instantiate(deadEffect, pos.position, pos.rotation);
+        }
+
+        innactiveEffect.SetActive(false);
 
         storage.audio[2].Play();
         storage.audio[3].Play();
