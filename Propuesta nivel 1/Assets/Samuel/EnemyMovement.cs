@@ -53,6 +53,8 @@ public class EnemyMovement : MonoBehaviour
                 anim.SetBool("isWalking", false);
                 
         }
+        } else {
+            agent.isStopped = false;
         }
         
     }

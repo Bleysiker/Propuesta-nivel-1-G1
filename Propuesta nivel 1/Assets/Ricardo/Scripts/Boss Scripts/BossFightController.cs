@@ -26,6 +26,8 @@ public class BossFightController : MonoBehaviour
     public Transform[] headPosition;
     //public GameObject[] innactiveEffect;
 
+    public GameObject priest;  
+
     void Start()
     {
         healthBar.maxValue = bossHealth.health;
@@ -72,10 +74,10 @@ public class BossFightController : MonoBehaviour
 
     public void BeginFight()
     {
-        
+        priest.SetActive(true);
         alreadyFigthing = true;
         SwitchAttack(true);
-        // Inicia la corrutina para mover el objeto hacia la posición objetivo.
+        // Inicia la corrutina para mover el objeto hacia la posiciï¿½n objetivo.
         if (boss != null) {
             StartCoroutine(MoveObject(fullStage,delayStart,true));
         }
@@ -98,7 +100,7 @@ public class BossFightController : MonoBehaviour
         storage.audio[3].Play();
 
         SwitchAttack(false);
-        // Inicia la corrutina para regresar el objeto a su posición inicial.
+        // Inicia la corrutina para regresar el objeto a su posiciï¿½n inicial.
         if (boss != null) {
            StartCoroutine(MoveObject(boss,delayEnd,false));
         }
@@ -107,7 +109,7 @@ public class BossFightController : MonoBehaviour
     IEnumerator MoveObject(GameObject obj, float delay,bool status)
     {
         yield return new WaitForSeconds(delay);
-        // Mueve el objeto suavemente hacia la posición de destino.
+        // Mueve el objeto suavemente hacia la posiciï¿½n de destino.
         obj.SetActive(status);
         healthBar.gameObject.SetActive(status);
     }
