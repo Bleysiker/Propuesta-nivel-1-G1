@@ -51,11 +51,11 @@ public class EnemyShooting : MonoBehaviour
         isShooting = false;
     }
 
-    void OnDrawGizmos()
+    /* void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, shootRange);
-    }
+    } */
 
     void ShootAnim()
     {
