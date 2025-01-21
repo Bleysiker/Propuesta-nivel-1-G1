@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;   
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class PlayerHealthController : MonoBehaviour
         health -= amount;
         if (health <= 0) {
             Debug.Log("Player Dead");
+            Time.timeScale = 0;
+            SceneManager.LoadScene("GameOver");
         }
     }
 
