@@ -74,6 +74,7 @@ public class BossFightController : MonoBehaviour
 
     public void BeginFight()
     {
+        SmoothSoundtrackTransition.Instance.TransitionToSecondTrack();
         priest.SetActive(true);
         alreadyFigthing = true;
         SwitchAttack(true);
