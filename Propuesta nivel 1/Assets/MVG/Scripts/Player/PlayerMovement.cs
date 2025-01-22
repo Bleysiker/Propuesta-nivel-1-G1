@@ -31,8 +31,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isWalking", false);
         }
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical); // Nuevo vector movement para aplicar el movimiento al Jugador
-        transform.Translate(movement * speed * Time.deltaTime); // Se le aplica el movimiento al jugador en la dirección de las teclas y con la velocidad establecida
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized; // Vector normalizado
+        transform.position += movement * speed * Time.deltaTime; // Movimiento independiente de la rotación
 
     }
 }
