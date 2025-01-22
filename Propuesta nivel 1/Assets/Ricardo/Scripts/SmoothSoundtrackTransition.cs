@@ -45,7 +45,7 @@ public class SmoothSoundtrackTransition : MonoBehaviour
         }
     }
 
-    private System.Collections.IEnumerator TransitionAudio(AudioSource from, AudioSource to)
+    private IEnumerator TransitionAudio(AudioSource from, AudioSource to)
     {
         float timer = 0f;
 

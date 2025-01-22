@@ -90,6 +90,8 @@ public class BossFightController : MonoBehaviour
         bossH1Anim.ChangeAnimationState("Dead");
         bossH2Anim.ChangeAnimationState("Dead");
 
+        EndScreen.Instance.ShowPanel();
+
         foreach(Transform pos in headPosition) {
             Instantiate(deadEffect, pos.position, pos.rotation);
         }
