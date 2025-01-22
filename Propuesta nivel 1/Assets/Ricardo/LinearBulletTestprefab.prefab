@@ -53,7 +53,7 @@ MonoBehaviour:
   bullet: {fileID: 8321480137742158273}
   destroyEffect: {fileID: 100006, guid: 0b0b903a29e4c3d4691a99a1047aa3e3, type: 3}
   destroyTime: 1
-  damage: 10
+  damage: 15
 --- !u!114 &8132928804207617362
 MonoBehaviour:
   m_ObjectHideFlags: 0
