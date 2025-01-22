@@ -7,7 +7,7 @@ public class LevelDesignRestart : MonoBehaviour
 {
     public void ReStart()
     {
-        SceneManager.LoadScene("LevelDesign");
+        SceneManager.LoadScene("Nivel1");
         Time.timeScale = 1;
     }
 }

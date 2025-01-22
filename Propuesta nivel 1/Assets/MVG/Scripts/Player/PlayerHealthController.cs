@@ -9,8 +9,15 @@ public class PlayerHealthController : MonoBehaviour
     public int health;
     public bool isShieldActive = false;
     public GameObject shieldPrefab;
+    public GameObject gameOverScreen;
+    public Slider healthBar;
 
-
+    private void Awake()
+    {
+        gameOverScreen.SetActive(false);
+        healthBar.maxValue = health;
+        healthBar.value = health;
+    }
     private void Update()
     {
         // Activa o desactiva el escudo según el estado de isShieldActive
@@ -29,6 +36,7 @@ public class PlayerHealthController : MonoBehaviour
         else
         {
             health += amount;
+            healthBar.value = health;
             Debug.Log("Health increased: " + health);
         }
 
@@ -44,12 +52,12 @@ public class PlayerHealthController : MonoBehaviour
 
         health -= amount;
         Debug.Log("Health reduced: " + health);
-
+        healthBar.value = health;
         if (health <= 0)
         {
             Debug.Log("Player Dead");
+            gameOverScreen.SetActive(true);
             Time.timeScale = 0;
-            SceneManager.LoadScene("GameOver");
         }
     }
 
