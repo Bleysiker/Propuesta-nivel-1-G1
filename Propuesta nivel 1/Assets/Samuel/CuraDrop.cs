@@ -6,7 +6,7 @@ public class CuraDrop : MonoBehaviour
 {
     public GameObject[] drops;
     float timer = 0;
-    float cooldown = 5f;
+    [SerializeField] float cooldown = 45f;
 
     [SerializeField] Animator anim;
 

@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e337b20fc0255f74a87dfeb62d2e530a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 80
   isDead: 0
   boss: 0
   takingDamage: {fileID: 11400000, guid: 1bc3d05a04a855e4580998eda0f9bcb2, type: 2}

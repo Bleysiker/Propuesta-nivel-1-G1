@@ -54,7 +54,7 @@ MonoBehaviour:
   projectileMark: {fileID: 100010, guid: 6832f280b46276341bdb2b39bfede65c, type: 3}
   bullet: {fileID: 6702653408074532140}
   effectDelay: 1
-  damage: 10
+  damage: 25
   destructionEffect: {fileID: 100008, guid: 7b346dd5b9c872e4f811ddc8000908a1, type: 3}
 --- !u!82 &6702653408074532140
 AudioSource:
