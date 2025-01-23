@@ -61,6 +61,7 @@ public class PlayerHealthController : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Player Dead");
+            GameOverSoundTrack.Instance.GameOver();
             gameOverScreen.SetActive(true);
             Time.timeScale = 0;
         }
