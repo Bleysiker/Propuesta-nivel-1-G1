@@ -113,6 +113,8 @@ MonoBehaviour:
   health: 100
   isShieldActive: 0
   shieldPrefab: {fileID: 77651642912561133}
+  gameOverScreen: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!95 &1441810924627753192
 Animator:
   serializedVersion: 5

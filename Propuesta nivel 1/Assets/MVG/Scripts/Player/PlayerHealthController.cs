@@ -17,6 +17,11 @@ public class PlayerHealthController : MonoBehaviour
         gameOverScreen.SetActive(false);
         healthBar.maxValue = health;
         healthBar.value = health;
+
+        if (shieldPrefab != null)
+        {
+            shieldPrefab.SetActive(false);
+        }
     }
     private void Update()
     {
