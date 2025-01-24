@@ -4,38 +4,38 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour
 {
-    public Camera mainCamera; // Se referencia la main Camera
+    public Camera mainCamera; // Se referencia la cámara principal
 
     void Update()
     {
-        RotateTowardsMouse(); // Se llama a la función para rotar el jugador hacia donde esté el mouse
+        RotateTowardsMouse(); // Llama a la función para rotar el jugador hacia donde esté el mouse
     }
 
     void RotateTowardsMouse()
     {
-        // Se cres un plano en y = 0 (a nivel del suelo)
-        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        // Crea un plano dinámico a la altura del jugador
+        Plane groundPlane = new Plane(Vector3.up, new Vector3(0, transform.position.y, 0));
 
-        // Se toma la posición del mouse en el espacio de la pantalla de juego
+        // Obtiene la posición del mouse en el espacio de la pantalla de juego
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        // Raycast to the plane
+        // Lanza un rayo hacia el plano
         if (groundPlane.Raycast(ray, out float enter))
         {
-            // Get the point on the plane where the ray intersects
+            // Obtiene el punto en el plano donde el rayo intersecta
             Vector3 hitPoint = ray.GetPoint(enter);
 
-            // Calculate the direction from the player to the hit point
+            // Calcula la dirección desde el jugador hacia el punto de impacto
             Vector3 direction = hitPoint - transform.position;
 
-            // Ignore the y-axis to keep the rotation in the X-Z plane
+            // Ignora el eje Y para mantener la rotación en el plano X-Z
             direction.y = 0;
 
-            // Rotate the player towards the mouse position
+            // Rota al jugador hacia la posición del mouse
             if (direction != Vector3.zero)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f); // Smooth rotation
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f); // Rotación suave
             }
         }
     }

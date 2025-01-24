@@ -74,6 +74,7 @@ public class BossFightController : MonoBehaviour
 
     public void BeginFight()
     {
+        SmoothSoundtrackTransition.Instance.TransitionToSecondTrack();
         priest.SetActive(true);
         alreadyFigthing = true;
         SwitchAttack(true);
@@ -88,6 +89,8 @@ public class BossFightController : MonoBehaviour
         //EFECTO DE MUERTE O EXPLOSION DE VICERAS*********************
         bossH1Anim.ChangeAnimationState("Dead");
         bossH2Anim.ChangeAnimationState("Dead");
+
+        EndScreen.Instance.ShowPanel();
 
         foreach(Transform pos in headPosition) {
             Instantiate(deadEffect, pos.position, pos.rotation);
