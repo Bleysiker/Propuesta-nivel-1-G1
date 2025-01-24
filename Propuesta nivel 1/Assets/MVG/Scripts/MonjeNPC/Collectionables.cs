@@ -19,7 +19,7 @@ public class Collectionables : MonoBehaviour
                 switch (itemType)
                 {
                     case ItemType.Health:
-                        player.IncreaseHealth(20); // Add health
+                        player.IncreaseHealth(50); // Add health
                         break;
                     case ItemType.Shield:
                         player.ActivateShield(5f); // Activate shield for 5 seconds

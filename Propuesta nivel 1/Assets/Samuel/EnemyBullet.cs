@@ -25,7 +25,7 @@ public class EnemyBullet : MonoBehaviour
             Destroy(this.gameObject);
         } if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "EnemyBullet")
         {
-            print("te diste soloxd");
+            
         }else {
             Destroy(this.gameObject);
         }

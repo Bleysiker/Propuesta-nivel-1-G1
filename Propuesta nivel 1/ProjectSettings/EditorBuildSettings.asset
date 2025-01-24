@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Andres Felipe/Nivel1.unity
-    guid: 42cdaecc0595d90498c48c39fa3d1ed0
-  - enabled: 1
     path: Assets/Didier/MainMenu.unity
     guid: b0b73ee47d8607844b19ef41068e9ad0
+  - enabled: 1
+    path: Assets/Andres Felipe/Nivel1.unity
+    guid: 42cdaecc0595d90498c48c39fa3d1ed0
   m_configObjects: {}
